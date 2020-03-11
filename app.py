@@ -7,12 +7,12 @@ from functools import reduce
 # TODO User can use --help or -h flag to get the sub-commands of command
 
 
-@click.group(help="asdas")
+@click.group()
 def cli():
     pass
 
 
-@cli.command(help='')
+@cli.command(help='Add numbers')
 @click.argument('nums', nargs=-1)
 @click.option('-f', is_flag=True)
 def add(nums, f):
@@ -24,7 +24,7 @@ def add(nums, f):
     click.echo(f"Addition of numbers {nums_convert} is {result}")
 
 
-@cli.command()
+@cli.command(help='Subtract numbers')
 @click.argument('nums', nargs=-1)
 @click.option('-f', is_flag=True)
 def subtract(nums, f):
@@ -36,7 +36,7 @@ def subtract(nums, f):
     click.echo(f"Subtraction of numbers {nums_convert} is {result}")
 
 
-@cli.command(help='Multiply')
+@cli.command(help='Multiply numbers')
 @click.argument('nums', nargs=-1)
 @click.option('-f', is_flag=True)
 def multiply(nums, f):
@@ -48,7 +48,7 @@ def multiply(nums, f):
     click.echo(f"Multiplication of numbers {nums_convert} is {result}")
 
     
-@cli.command()
+@cli.command(help='Division numbers')
 @click.argument('nums', nargs=-1)
 @click.option('-f', is_flag=True)
 def division(nums, f):
